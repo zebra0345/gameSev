@@ -11,8 +11,26 @@ std::wstring GetExeDir()
     GetModuleFileNameW(nullptr, path, MAX_PATH);
 
     std::wstring full = path;
+
+    // 1) exe 파일명 제거 -> exe가 있는 디렉터리
     size_t pos = full.find_last_of(L"\\/");
-    return (pos == std::wstring::npos) ? L"." : full.substr(0, pos);
+    if (pos == std::wstring::npos)
+        return L".";
+    std::wstring exeDir = full.substr(0, pos);
+
+    // 2) 한 단계 위로 (예: ...\x64\Debug -> ...\x64)
+    size_t pos1 = exeDir.find_last_of(L"\\/");
+    if (pos1 == std::wstring::npos)
+        return exeDir;
+    std::wstring up1 = exeDir.substr(0, pos1);
+
+    // 3) 두 단계 위로 (예: ...\x64 -> ...\repo_root)
+    size_t pos2 = up1.find_last_of(L"\\/");
+    if (pos2 == std::wstring::npos)
+        return up1;
+    std::wstring up2 = up1.substr(0, pos2);
+
+    return up2;
 }
 
 // 문자열 읽어오기

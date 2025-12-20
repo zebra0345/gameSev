@@ -1013,7 +1013,6 @@ static bool InitD3D(HWND hWnd)
     ComPtr<ID3D11Texture2D> tex;
     gDevice->CreateTexture2D(&desc, &init, tex.GetAddressOf());
     gDevice->CreateShaderResourceView(tex.Get(), nullptr, gWhiteTex.GetAddressOf());
-
     // 폰트 로드
     std::wstring fontPath = GetExeDir() + L"\\assets\\DebugFont.spritefont";
     if (GetFileAttributesW(fontPath.c_str()) != INVALID_FILE_ATTRIBUTES)
