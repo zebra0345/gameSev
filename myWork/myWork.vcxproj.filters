@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Anim">
+      <UniqueIdentifier>{4c0c7acd-85ea-4f36-92a4-bb3f51a68bcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Combat">
+      <UniqueIdentifier>{022ddfe4-c999-4275-9a47-3bcf20f3345d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Config">
+      <UniqueIdentifier>{c4091e5a-5b57-4157-981d-caee79f3e1ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core">
+      <UniqueIdentifier>{1066e064-e15f-4ad8-9a28-be983ae957c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{96234b24-acba-4584-8bf6-4f79df16519c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Render">
+      <UniqueIdentifier>{46a86842-dac3-4290-a793-ccdbb618f0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\UI">
+      <UniqueIdentifier>{1abf3e8e-c2a2-45ea-92e4-578777f752ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Anim">
+      <UniqueIdentifier>{d7971630-b092-47c0-9c07-3fcadd43d2b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Combat">
+      <UniqueIdentifier>{bc644392-ff28-4d99-9a8a-4ffad6542ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Config">
+      <UniqueIdentifier>{da2b9651-9be6-41ad-a3bc-c3d43207d677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Core">
+      <UniqueIdentifier>{a1c84fae-751b-423f-8d67-d068a46fa69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game">
+      <UniqueIdentifier>{92dce657-52bd-4c32-a31e-bdbcd2ded817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\UI">
+      <UniqueIdentifier>{174089ad-9327-42bf-a887-fe86f3159cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Render">
+      <UniqueIdentifier>{ffd1fbcf-cce7-4dae-bcf0-e3f7940daf2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\..\DebugFont.spritefont">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\AppTypes.cpp">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Combat\Attacks.cpp">
+      <Filter>소스 파일\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim\Animator.cpp">
+      <Filter>소스 파일\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>소스 파일\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\input.cpp">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\Ini.cpp">
+      <Filter>소스 파일\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\Tuning.cpp">
+      <Filter>소스 파일\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Renderer.cpp">
+      <Filter>소스 파일\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\FloatingTextSystem.cpp">
+      <Filter>소스 파일\UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UI\FloatingTextSystem.h">
+      <Filter>헤더 파일\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Renderer.h">
+      <Filter>헤더 파일\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim\Animator.h">
+      <Filter>헤더 파일\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="Combat\Attacks.h">
+      <Filter>헤더 파일\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\AppTypes.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Input.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Types.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game.h">
+      <Filter>헤더 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\GameHooks.h">
+      <Filter>헤더 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\Ini.h">
+      <Filter>헤더 파일\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\Tuning.h">
+      <Filter>헤더 파일\Config</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
