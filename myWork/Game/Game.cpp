@@ -80,7 +80,6 @@ void Game::Tick()
     float dtReal = ClampDt((float)delta);
 
     // ---- 방어적 바인딩 체크 (누락되면 로그 후 return) ----
-    // null 참조방지
     if (!hooks_.renderMode || !hooks_.hitStopTimer || !hooks_.shakeTimer || !hooks_.timeAcc)
     {
         DebugLogW(L"[Game] Missing required state hooks (renderMode/timers)\n");
@@ -118,14 +117,30 @@ void Game::Tick()
             *hooks_.hitStopTimer = 0.0f;
     }
 
-    // hitStop 중에는 연출(dtReal)
+    // 기본 dtGame: hitStop이면 0, 아니면 dtReal
     float dtGame = (*hooks_.hitStopTimer > 0.0f) ? 0.0f : dtReal;
 
+    // ---- Freeze 처리 (전체 로직 정지 + Step 지원) ----
+    // Freeze 상태면 기본은 dtGame=0
+    // 단, F4(debugStepOnce)가 켜진 프레임만 한 번 dtGame을 허용해서 "한 프레임 진행"
+    if (hooks_.debugFreezeAnim && *hooks_.debugFreezeAnim)
+    {
+        bool doStep = false;
+        if (hooks_.debugStepOnce && *hooks_.debugStepOnce)
+            doStep = true;
+
+        if (!doStep)
+            dtGame = 0.0f;   // 로직 정지 (입력/이동/AI/판정 포함)
+        // doStep이면 dtGame은 위에서 계산된 값 그대로 사용 (hitStop이면 어차피 0)
+    }
+
     // ---- 연출 업데이트 ----
+    // 연출은 dtReal로 계속 업데이트 (Freeze 중에도 화면 흔들림/텍스트는 남길지 정책)
     if (hooks_.updateCameraShake)    hooks_.updateCameraShake(dtReal);
     if (hooks_.updateFloatingTexts)  hooks_.updateFloatingTexts(dtReal);
 
     // ---- 게임 로직 업데이트 ----
+    // dtGame이 0이면 사실상 "정지"
     hooks_.updatePlayer(dtGame);
     hooks_.updateEnemy(dtGame);
 
@@ -143,4 +158,5 @@ void Game::Tick()
     // ---- 렌더 ----
     hooks_.renderFrame();
 }
+
 
