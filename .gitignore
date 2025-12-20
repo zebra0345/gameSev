@@ -24,3 +24,5 @@ CMakeCache.txt
 # OS
 Thumbs.db
 .DS_Store
+
+packages/
