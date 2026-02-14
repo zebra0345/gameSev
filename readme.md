@@ -6,7 +6,6 @@
 - 단순 렌더링이 아닌 판정, 타이밍, 디버그, 튜닝 중심으로 콘텐츠 제작 친화적인 구조 설계 목표
     - Language: C++ (Win32)
     - Graphics: DirectX 11 / DirectXTK(SpriteBatch)
-- Nuget 프로젝트 복원이 반드시 실행 전 필요합니다.
 - 프로젝트 폴더가 아닌 솔루션에 들어가서 main.cpp실행하면 작동화면 볼 수 있습니다.
 
 ### 전체 아키텍처 개요
